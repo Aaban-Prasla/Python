@@ -1,2 +1,2 @@
 # Python
-All the python code that I wrote when I was in my firstyear of university.
+Exercise Sets from 2 to 8
