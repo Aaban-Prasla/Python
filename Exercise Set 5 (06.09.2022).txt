@@ -1,0 +1,69 @@
+Exercise 5.1
+
+import random
+
+number_times_dice_should_be_rolled = int(input("Enter the number of dice that should be rolled: "))
+dice_roll_list = []
+
+for x in range(number_times_dice_should_be_rolled):
+    dice_roll = random.randint(1,6)
+    dice_roll_list.append(dice_roll)
+
+dice_roll_list.sort()
+print(sum(dice_roll_list))
+
+Exercise 5.2
+
+number_list = []
+int_given_numbers = 0
+
+given_numbers = input("Enter an integer or quit by pressing enter: ")
+if given_numbers != "":
+    int_given_numbers = int(given_numbers)
+
+while given_numbers!= "":
+    number_list.append(int_given_numbers)
+
+    given_numbers = input("Enter a number or quit by pressing enter: ")
+    if given_numbers != "":
+        int_given_numbers = int(given_numbers)
+
+if given_numbers == "":
+    number_list.sort(reverse=True)
+    print(number_list[0:5])
+
+Exercise 5.3
+
+number = float(input("Enter a positive integer: "))
+int_number = int(number)
+
+denominator = 1
+
+all_answers = []
+
+for x in range(int_number):
+    answer = (int_number/denominator)
+    if answer == int(answer):
+        all_answers.append(int(answer))
+    denominator = denominator + 1
+
+if len(all_answers) == 2:
+    print("The integer is a prime number.")
+else:
+    print("The integer is not a prime number because it is divisible by", len(all_answers),"numbers.")
+
+Exercise 5.4
+
+city_name_list = []
+
+number = 0
+city_name = str(input("Enter the name of a city: "))
+city_name_list.append(city_name)
+
+for x in range(4):
+    city_name = str(input("Enter the name of another city: "))
+    city_name_list.append(city_name)
+
+for y in range(5):
+    print(city_name_list[number])
+    number = number + 1

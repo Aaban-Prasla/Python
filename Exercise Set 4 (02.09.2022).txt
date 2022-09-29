@@ -1,0 +1,103 @@
+Exercise 4.1
+
+X = 0
+
+while X < 999:
+    X = X + 3
+    print(X)
+
+Exercise 4.2
+
+inches= float(input("Enter a length in inches: "))
+
+while inches >= 0:
+    centimeters = inches * 2.54
+    print( centimeters)
+    inches = float(input("Enter a length in inches: "))
+
+Exercise 4.3
+
+current_number = 0
+lowest = 0
+highest = 0
+
+current_number = int(input("Enter a number: "))
+lowest = current_number
+highest = current_number
+
+while current_number!= "":
+    if current_number < lowest:
+        lowest = current_number
+    if current_number > highest:
+        highest = current_number
+
+    current_number = input("Enter a number: ")
+    if current_number != "":
+        current_number = int(current_number)
+
+str_lowest = str(lowest)
+str_highest = str(highest)
+
+print("The lowest number is " + str_lowest + " and the highest number is " + str_highest + ".")
+
+Exercise 4.4
+
+import random
+random_number = random.randint(1,10)
+
+guessed_number = int(input("Enter your guess: "))
+
+while random_number != guessed_number:
+
+    if random_number > guessed_number:
+        guessed_number = int(input("Too low, try again: "))
+    if random_number < guessed_number:
+        guessed_number = int(input("Too high, try again: "))
+    if random_number == guessed_number:
+        print("Correct")
+
+Exercise 4.5
+
+username = "python"
+password = "rules"
+
+username_entered = input("Enter Username: ")
+password_entered = input("Enter Password: ")
+
+x = 6
+
+if username == username_entered and password == password_entered:
+        print("Welcome")
+
+while ((username != username_entered) or (password != password_entered)) and x > 1:
+    x = x - 1
+    print("Incorrect username or password.",x,"tries remaining.")
+    username_entered = input("Enter Username: ")
+    password_entered = input("Enter Password: ")
+    if x == 1:
+        print("Access denied")
+    if username == username_entered and password == password_entered:
+        print("Welcome")
+
+Exercise 4.6 (I didn't understand how to to do it using the method explained so I just did it in my own way. I am Pretty sure this is the wrong method so I have marked exercise as not done.)
+
+import math
+import random
+
+pi = math.pi
+
+circle_area = pi
+square_area = 4
+n = 0
+
+points_to_generate = int(input("Enter the amount of points that should be generated: "))
+num_of_points_generated = 0
+
+while num_of_points_generated < points_to_generate:
+    generated_points = random.uniform(0, 4)
+    num_of_points_generated = num_of_points_generated + 1
+
+    if generated_points <= pi:
+        n = n + 1
+
+print("The approximated value of π is", 4*n/points_to_generate)

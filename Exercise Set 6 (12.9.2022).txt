@@ -1,0 +1,113 @@
+Exercise 6.1
+
+import random
+
+def dice_rolling():
+    dice_roll = 0
+    while dice_roll != 6:
+        dice_roll = random.randint(1, 6)
+        str_dice_roll = str(dice_roll)
+        print("The number rolled was", str_dice_roll + ".")
+    return
+
+dice_rolling()
+
+Exercise 6.2
+
+import random
+
+def dice_rolling():
+    roll = int(input("What sided dice would like to roll: "))
+    dice_roll = 0
+    while dice_roll != roll:
+        dice_roll = random.randint(1,roll)
+        str_dice_roll = str(dice_roll)
+        print("The number rolled was", str_dice_roll + ".")
+    return
+
+dice_rolling()
+
+Exercise 6.3
+
+def gallon_to_liter():
+    user_input = input("Enter the amount of gallon/s or quit by entering a negative value: ")
+    if user_input == "":
+        user_input = 0
+        float_user_input = float(user_input)
+        while float_user_input >= 0:
+            amount_in_liters = float_user_input * 3.78541
+            print(float_user_input, "gallons is", amount_in_liters, "in liters.")
+            float_user_input = (input("Enter the amount of gallon/s or quit by entering a negative value: "))
+            if float_user_input == "":
+                float_user_input = 0
+            else:
+                float_user_input = float(float_user_input)
+    return
+
+gallon_to_liter()
+
+Exercise 6.4
+
+def number_list_sum():
+    number_list = []
+    user_input = input("Enter a number or quit by pressing enter: ")
+
+    while user_input != "":
+        number_list.append(float(user_input))
+        user_input = input("Enter a number or quit by pressing enter: ")
+
+    sum_of_number_list = sum(number_list)
+    str_sum_of_number_list = str(sum_of_number_list)
+    print("The sum of all the number entered is " + str_sum_of_number_list + ".")
+    return
+
+number_list_sum()
+
+Exercise 6.5 - (I could figure out how to do this one properly but this is my attempt)
+
+def number_list_function():
+    number_list = []
+    user_input = input("Enter an integer or quit by pressing enter: ")
+
+    while user_input != "":
+        number_list.append(float(user_input))
+        user_input = input("Enter an integer or quit by pressing enter: ")
+    x = 1
+    for n in number_list:
+#        even = n/2
+        x = x + 1
+        if even != int(even):
+            number_list.remove(n)
+
+    number_list.sort()
+    print("A list of all the even integer entered, in ascending order:", number_list)
+    return
+number_list_function()
+
+Exercise 6.6
+
+def pizza_function():
+    import math
+
+    print("Enter the price and diameters (in centimeter) of any two pizzas you want to compare")
+    pizza_one_price = float(input("Enter the price (in euros) of the first pizza you want to compare: "))
+    pizza_one_diameter_in_cm = float(input("Enter the diameter (in centimeters) of the first pizza you want to compare: "))
+
+    pizza_two_price = float(input("Enter the price (in euros) of the second pizza you want to compare: "))
+    pizza_two_diameter_in_cm = float(input("Enter the diameter (in centimeters) of the second pizza you want to compare: "))
+
+    pizza_one_area = ((pizza_one_diameter_in_cm / 2) * (pizza_one_diameter_in_cm / 2) * math.pi) / 0.0001
+    pizza_one_per_unit_cost = pizza_one_price / pizza_one_area
+
+    pizza_two_area = ((pizza_two_diameter_in_cm / 2) * (pizza_two_diameter_in_cm / 2) * math.pi) / 0.0001
+    pizza_two_per_unit_cost = pizza_two_price / pizza_two_area
+
+    if pizza_one_per_unit_cost > pizza_two_per_unit_cost:
+        print("The per unit cost of the first pizza is," + str(pizza_one_per_unit_cost) + " €/m and the per unit cost of the second pizza is," + str(pizza_two_per_unit_cost) + " €/m. This means that the second pizza gives better value for money.")
+    elif pizza_one_per_unit_cost == pizza_two_per_unit_cost:
+        print("The per unit cost of the first pizza is," + str(pizza_one_per_unit_cost) + " €/m and the per unit cost of the second pizza is," + str(pizza_two_per_unit_cost) + " €/m. This means that both pizza's provide equal value for money.")
+    else:
+        print("The per unit cost of the first pizza is," + str(pizza_one_per_unit_cost) + " €/m and the per unit cost of the second pizza is," + str(pizza_two_per_unit_cost) + " €/m. This means that the first pizza gives better value for money.")
+    return
+
+pizza_function()

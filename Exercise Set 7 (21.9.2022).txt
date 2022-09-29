@@ -1,0 +1,85 @@
+Exercise 7.1
+
+seasons = ("Winter", "Winter", "Spring", "Spring", "Spring", "Summer", "Summer", "Summer", "Autumn", "Autumn", "Autumn", "Winter")
+month_number = int(input("Enter the number of a month (1-12), for example, June is month number 6: "))
+season = seasons[month_number-1]
+print(f"Month number {month_number} is a {season} month")
+
+Exercise 7.2
+
+name_list = []
+x = 0
+y = 0
+
+name = input("Enter a name, or quit by pressing enter: ")
+if name != "":
+    print("New name.")
+    name_list.append(name)
+
+while name != "":
+    name = input("Enter another name or quit by pressing enter: ")
+    while x < len(name_list):
+        name_from_the_list = name_list[x]
+        if name != name_from_the_list:
+            x = x + 1
+            y = 1
+        elif name == name_from_the_list:
+            x = x + 1
+            y = y - 1
+    if y == 1:
+        print("New name.")
+        name_list.append(name)
+    else:
+        print("Existing name.")
+        name_list.append(name)
+
+#This line is just to separate the input from the output
+print("-------------------------------------------------")
+print("Name/Names in the list: ")
+for name in name_list:
+    print(name)
+
+Exercise 7.3
+
+mini_airport_database = {"EFHK":"Helsinki-Vanta",
+                         "01GA":"Medical Center Heliport",
+                         "04MA":"Goddard Field",
+                         "01MI":"Flow Through Terminal Heliport"}
+
+print("To enter information of a new airport, press A.")
+print("To retrieve the information of an existing airport, press B.")
+print("To exit the program, press C.")
+
+x = 0
+while x != 1:
+    user_choice = input("Your choice: ").upper()
+    if user_choice == "A":
+        ICAO_code = str(input("Enter the ICAO code of the airport you want to add: ").upper())
+        airport_name = str(input("Enter the name of that airport: ").capitalize())
+        mini_airport_database[ICAO_code] = airport_name
+        print("Airport data entry successful!")
+        print("---------------------------------------------------------------------------------")
+        print("To enter information of a new airport, press A.")
+        print("To retrieve the information of an existing airport, press B.")
+        print("To exit the program, press C.")
+    elif user_choice == "B":
+        ICAO_code = input("Enter the ICAO code: ").upper()
+        print("Airport data retrieval successful!")
+        print(f"The name of this airport is {mini_airport_database[ICAO_code]}.")
+        print("---------------------------------------------------------------------------------")
+        print("To enter information of a new airport, press A.")
+        print("To retrieve the information of an existing airport, press B.")
+        print("To exit the program, press C.")
+    elif user_choice == "C":
+        print("All airport data is saved, program terminated.")
+        print("---------------------------------------------------------------------------------")
+        break
+    else:
+        print("Error, please choose a valid option.")
+        continue
+
+print("Do you want to retrieve the airport database?")
+data_base_printing = input("Press any key to retrieve the database or press enter to exit: ")
+
+if data_base_printing != "":
+        print(mini_airport_database)

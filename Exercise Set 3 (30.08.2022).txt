@@ -1,0 +1,57 @@
+Exercise 3.1
+
+zander_size = float(input("Enter the size of the Zander: "))
+if zander_size>=42:
+    print("Congratulations you have caught a zander that is " + str(zander_size) + " cm long.")
+if zander_size<42:
+    print("Release the Zander back into the lake because it is "+ str(42-zander_size) + " cm below the the size limit.")
+
+Exercise 3.2
+
+cabin_class = (input("Enter your cabin class, case sensitive search: LUX, A, B or, C: "))
+
+if cabin_class == "LUX":
+    print("Upper-deck cabin with a balcony.")
+elif cabin_class == "A":
+    print("Above the car deck, equipped with a window.")
+elif cabin_class == "B":
+    print("Windowless cabin below the car deck.")
+elif cabin_class == "C":
+    print("Windowless cabin below the car deck.")
+else:
+    print("Invalid cabin class.")
+
+Exercise 3.3
+
+gender = input("Enter your biological gender, Male or Female: ")
+g_l = float(input("Enter your hemoglobin level in g/l: "))
+
+if gender == "Female":
+    if g_l < 118:
+        print("Hemoglobin level is low.")
+    elif g_l > 154:
+        print("Hemoglobin level is High.")
+    else:
+        print("Hemoglobin level is normal.")
+
+elif gender == "Male":
+    if g_l < 135:
+        print("Hemoglobin level is low.")
+    elif g_l > 166:
+        print("Hemoglobin level is High.")
+    else:
+        print("Hemoglobin level is normal.")
+
+Exercise 3.4
+
+year = float(input("Enter a year: "))
+X = 1
+leap_year = 4*X
+while year>leap_year:
+    leap_year = 4 * X
+    X = X + 1
+
+if year == leap_year:
+    print("Congratulations, the year you entered is a leap year!")
+else:
+    print("Sadly, the year you entered is not a leap year.")

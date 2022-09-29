@@ -1,0 +1,48 @@
+Exercise 8.1
+
+import mysql.connector
+
+connection = mysql.connector.connect(
+    host="127.0.0.1",
+    port="3306",
+    database="flightgame",
+    user="root",
+    password="AabanPrasla",
+    autocommit=True
+)
+
+ICAO_code = input("Enter the ICAO Code of an airport: ").upper()
+airport_name_and_city_name = 'select name, municipality from airport where ident = ' + f'"{ICAO_code}"' + ";"
+cursor = connection.cursor()
+cursor.execute(airport_name_and_city_name)
+output = cursor.fetchall()
+
+print(f"The name of the airport is {output[0][0]}, and it is located in {output[0][1]}.")
+
+Exercise 8.2
+
+import mysql.connector
+
+connection = mysql.connector.connect(
+    host="127.0.0.1",
+    port="3306",
+    database="flightgame",
+    user="root",
+    password="AabanPrasla",
+    autocommit=True
+)
+
+area_code = input("Enter the ICAO Code of an airport: ")
+airport_name_and_type = 'select name, type from airport where iso_country = ' f'"{area_code}" order by type;'
+cursor = connection.cursor()
+cursor.execute(airport_name_and_type)
+output = cursor.fetchall()
+
+for x in output:
+        print(f"Airport name: {x[0]}")
+        print(f"The type of airport: {x[1]}")
+        print("--------------------------------------------------------")
+
+Exercise 8.3
+
+I do not understand how to make this exercise work.
